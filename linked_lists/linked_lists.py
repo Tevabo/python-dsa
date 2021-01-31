@@ -11,9 +11,11 @@ class LinkedList:
     # Display entire LinkedList
     def print_list(self):
         value = self.head
+        collection = []
         while value is not None:
-            print(value.data)
+            collection.append(value.data)
             value = value.next
+        print(collection)
 
     # Add value to start of LinkedList
     def prepend_value(self, value):
@@ -37,12 +39,24 @@ class LinkedList:
             return 0
         return 1 + self.getCountRecursive(node.next)
 
+    # Non-recursive function
+    def length(self):
+        current = self.head
+        count = 0
+
+        while current:
+            current = current.next
+            count += 1
+        return count
+
 
 # Testing setup
 list = LinkedList()
 list.head = Node(9)
 list.prepend_value(12)
 list.append_value(7)
+list.append_value(15)
 
-# list.print_list()
-print("Count is:", list.getCount())
+
+print("Count is:", list.length())
+list.print_list()
