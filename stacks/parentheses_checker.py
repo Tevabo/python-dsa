@@ -36,4 +36,6 @@ def check_parentheses(arr):
     return stack.isEmpty()
 
 
-print(check_parentheses(test2))
+assert check_parentheses(test1) == True
+assert check_parentheses(test2) == False
+assert check_parentheses(test3) == True
